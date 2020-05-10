@@ -1,13 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <class id="head">
+        <a href="index.html"><i class="fa fa-home"></i></a>
+        <input type="text" id="inputValue" placeholder="Search movie...">
+        <button class="open-button" onclick="openFormSignUp()">Sign Up</button>
+        <button class="open-button" onclick="openFormSignIn()">Sign In</button>
+        <button class="open-button" onclick="signOut()">Sign Out</button>
+    </class>
+
+    <div id="signupContainer">
+        <form id="signUp" action="" class="form-container">
+            <h1>Sign Up</h1>
+            <input id="signup-email" type="email" placeholder="Enter Email" name="email" required>
+            <input id="signup-password" type="password" placeholder="Enter Password" name="psw" required>
+            <button type="button" class="btn" onclick="signUp()">Sign Up</button>
+            <button type="button" class="btn cancel" onclick="closeFormSignUp()">Close</button>
+        </form>
+    </div>
+
+    <div id="signinContainer">
+        <form id="signIn" action="" class="form-container">
+            <h1>Sign In</h1>
+            <input id="signin-email" type="email" placeholder="Enter Email" name="email" required>
+            <input id="signin-password" type="password" placeholder="Enter Password" name="psw" required>
+            <button type="button" class="btn" onclick="signIn()">Sign In</button>
+            <button type="button" class="btn cancel" onclick="closeFormSignIn()">Close</button>
+        </form>
+    </div>
+    </div>
+
+    <div id="classement">
+        <h1 class="top-moment">Top movies selection chosen by users</h1>
+        <ul id="topMovies">
+
+        </ul>
+    </div>
+
+    <div id="result"></div>
+    <div id="movies"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+    <script>
+        function openFormSignUp() {
+            document.getElementById("signupContainer").style.display = "block";
+        };
+
+        function closeFormSignUp() {
+            document.getElementById("signupContainer").style.display = "none";
+        };
+
+        function openFormSignIn() {
+            document.getElementById("signinContainer").style.display = "block";
+        };
+
+        function closeFormSignIn() {
+            document.getElementById("signinContainer").style.display = "none";
+        };
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAFsZHcr7QWyIk8ZApEBTnXJ7Vx2tW3IFM",
+            authDomain: "form-c947b.firebaseapp.com",
+            databaseURL: "https://form-c947b.firebaseio.com",
+            projectId: "form-c947b",
+            storageBucket: "form-c947b.appspot.com",
+            messagingSenderId: "994525160648",
+            appId: "1:994525160648:web:2a2846e6b47b704c9e31fd"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+    <script src="js/form.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
