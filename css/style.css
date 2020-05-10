@@ -14,6 +14,7 @@ body {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: baseline;
 }
 
 #head a i {
@@ -115,10 +116,10 @@ section img {
     border: 1px solid white;
     background-color: transparent;
     padding: 1rem 2rem;
+    margin-bottom: 1rem;
     width: 50%;
     font-size: 1rem;
     color: white;
-    margin: 1rem;
     transition: ease-in-out 0.2s;
     align-self: center;
     -webkit-transition: ease-in-out 0.2s;
@@ -140,6 +141,7 @@ section img {
     border: 1px solid red;
     background-color: red;
     padding: 1rem 2rem;
+    margin-bottom: 1rem;
     width: 50%;
     font-size: 1rem;
     color: white;
@@ -154,6 +156,7 @@ section img {
 
 .headButtons button {
     width: 10rem;
+    margin-left: 1rem;
 }
 
 .form-container .button-white {

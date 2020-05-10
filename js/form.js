@@ -1,31 +1,34 @@
-db.collection('favos').get().then(snapshot => {
-    // console.log(snapshot.docs);
-    setupTopMovies(snapshot.docs);
-});
-
 const movieTopList = document.getElementById('topMovies');
 
 const setupTopMovies = (data) => {
-    let html = '';
-    data.forEach(doc => {
-        const top = doc.data();
-        const li = `
+
+    if (data.length) {
+        let html = '';
+        data.forEach(doc => {
+            const top = doc.data();
+            const li = `
         <li>
             <div class="movieTitle">${top.title}</div>
             <div class="movieRelease">${top.release}</div>
         </li>
         `;
-        html += li
-    });
-    movieTopList.innerHTML = html;
+            html += li
+        });
+        movieTopList.innerHTML = html;
+    }else {
+        movieTopList.innerHTML = '<p>Login to view top movies chosen by users</p>'
+    }
 }
 
 auth.onAuthStateChanged(user => {
     // 
-    if(user){
-        console.log('user logged in: ', user);
-    }else{
-        console.log('user logged out');
+    if (user) {
+        db.collection('favos').get().then(snapshot => {
+            // console.log(snapshot.docs);
+            setupTopMovies(snapshot.docs);
+        });
+    } else {
+        setupTopMovies([]);
     }
 })
 
@@ -35,9 +38,9 @@ function signUp() {
 
     const promise = auth.createUserWithEmailAndPassword(email, password);
     promise.catch(e => alert(e.message));
-    
+
     document.getElementById('signUp').reset();
-    document.getElementById('signupContainer').style.display='none';
+    document.getElementById('signupContainer').style.display = 'none';
 }
 
 function signIn() {
@@ -48,7 +51,7 @@ function signIn() {
     promise.catch(e => alert(e.message));
 
     document.getElementById('signIn').reset();
-    document.getElementById('signinContainer').style.display='none';
+    document.getElementById('signinContainer').style.display = 'none';
 }
 
 function signOut() {
