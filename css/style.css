@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: space-between;
 }
 
 #head a i {
@@ -20,6 +21,17 @@ body {
     margin-top: 1.5rem;
     margin-right: 1rem;
     font-size: 2rem;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+}
+
+.headButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 #inputValue {
@@ -32,10 +44,13 @@ body {
     margin-top: 2rem;
     outline: none;
     color: white;
-    font-size: 1rem;;
+    font-size: 1rem;
+    ;
 }
 
-textarea:focus, input:focus, button:focus{
+textarea:focus,
+input:focus,
+button:focus {
     outline: none;
 }
 
@@ -44,7 +59,6 @@ textarea:focus, input:focus, button:focus{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 2rem;
 }
 
 #result {
@@ -60,7 +74,6 @@ section {
     flex-direction: column;
     width: 25vw;
     padding-bottom: 2rem;
-    /* border: 1px solid #212121; */
     padding: 1%;
     transition: ease-in-out 0.5s;
     color: white;
@@ -94,7 +107,8 @@ section img {
     margin-top: 1rem;
 }
 
-section .showDetails {
+.button-white {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     justify-self: flex-end;
@@ -113,37 +127,62 @@ section .showDetails {
     -o-transition: ease-in-out 0.2s;
 }
 
-section .showDetails:hover {
+.button-white:hover {
     background-color: red;
     border: red;
-    cursor: pointer;
 }
 
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-    
-  }
-  
-  /* The popup form - hidden by default */
-  #signupContainer {
+.button-red {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    justify-self: flex-end;
+    border: 1px solid red;
+    background-color: red;
+    padding: 1rem 2rem;
+    width: 50%;
+    font-size: 1rem;
+    color: white;
+    /* margin: 1rem; */
+    transition: ease-in-out 0.2s;
+    align-self: center;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -ms-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
+}
+
+.headButtons button {
+    width: 10rem;
+}
+
+.form-container .button-white {
+    width: 100%;
+}
+
+.form-container .button-red {
+    width: 100%;
+}
+
+#signupContainer {
     display: none;
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0%;
     background-color: #000000c4;
-  }
+}
 
-  #signinContainer {
+#signinContainer {
     display: none;
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0%;
     background-color: #000000c4;
-  }
+}
 
-  .form-container {
+.form-container {
     display: flex;
     flex-direction: column;
     width: 20%;
@@ -152,41 +191,48 @@ section .showDetails:hover {
     right: 39%;
     z-index: 9;
     padding: 1rem;
-    background-color: white;
-  }
-  
-  /* Full-width input fields */
-  .form-container input[type=email], .form-container input[type=password] {
+    background-color: #0a0a0a;
+}
+
+.form-container h1 {
+    color: red;
+}
+
+.form-container input[type=email],
+.form-container input[type=password] {
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
-  }
-  
-  /* When the inputs get focus, do something */
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
-  }
-  
-  /* Set a style for the submit/login button */
-  .form-container .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
+}
+
+#classement {
     width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-  }
-  
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color: red;
-  }
-  
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-  }
+    display: flex;
+    flex-direction: column;
+}
+
+.top-moment {
+    color: white;
+    font-size: 1.5rem;
+    color: red;
+}
+
+#classement ul {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    padding: 0;
+}
+
+#classement li {
+    display: flex;
+    flex-direction: column;
+    padding-right: 6rem;
+}

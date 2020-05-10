@@ -87,7 +87,7 @@ class Movie {
                 <p><span>Genre: </span>${this.genreName}</p>
                 <p><span>Language: </span>${this.language}</p>
                 <p><span>Release: </span>${this.date}</p>
-                <button onclick="showDetails(${this.id})" id="showDetails" class="showDetails">DETAILS</button></section>`
+                <button id="showDetails" class="button-white">DETAILS</button></section>`
     }
     // console.log(this.fetchMovieGenre(28));
 }

@@ -10,21 +10,25 @@
 </head>
 
 <body>
-    <class id="head">
-        <a href="index.html"><i class="fa fa-home"></i></a>
-        <input type="text" id="inputValue" placeholder="Search movie...">
-        <button class="open-button" onclick="openFormSignUp()">Sign Up</button>
-        <button class="open-button" onclick="openFormSignIn()">Sign In</button>
-        <button class="open-button" onclick="signOut()">Sign Out</button>
-    </class>
+    <div id="head">
+        <div class="navigation">
+            <a href="index.html"><i class="fa fa-home"></i></a>
+            <input type="text" id="inputValue" placeholder="Search movie...">
+        </div>
+        <div class="headButtons">
+            <button class="button-white" onclick="openFormSignUp()">Sign Up</button>
+            <button class="button-white" onclick="openFormSignIn()">Sign In</button>
+            <button class="button-red" onclick="signOut()">Sign Out</button>
+        </div>
+    </div>
 
     <div id="signupContainer">
         <form id="signUp" action="" class="form-container">
             <h1>Sign Up</h1>
             <input id="signup-email" type="email" placeholder="Enter Email" name="email" required>
             <input id="signup-password" type="password" placeholder="Enter Password" name="psw" required>
-            <button type="button" class="btn" onclick="signUp()">Sign Up</button>
-            <button type="button" class="btn cancel" onclick="closeFormSignUp()">Close</button>
+            <button type="button" class="button-white" onclick="signUp()">Sign Up</button>
+            <button type="button" class="button-red" onclick="closeFormSignUp()">Close</button>
         </form>
     </div>
 
@@ -33,21 +37,24 @@
             <h1>Sign In</h1>
             <input id="signin-email" type="email" placeholder="Enter Email" name="email" required>
             <input id="signin-password" type="password" placeholder="Enter Password" name="psw" required>
-            <button type="button" class="btn" onclick="signIn()">Sign In</button>
-            <button type="button" class="btn cancel" onclick="closeFormSignIn()">Close</button>
+            <button type="button" class="button-white" onclick="signIn()">Sign In</button>
+            <button type="button" class="button-red" onclick="closeFormSignIn()">Close</button>
         </form>
-    </div>
     </div>
 
     <div id="classement">
-        <h1 class="top-moment">Top movies selection chosen by users</h1>
+        <h1 class="top-moment">Top movies selection chosen by users:</h1>
         <ul id="topMovies">
 
         </ul>
     </div>
 
     <div id="result"></div>
-    <div id="movies"></div>
+
+    <div id="topRated">
+        <h1 class="top-moment">Top rated movies of the moment:</h1>
+        <div id="movies"></div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
