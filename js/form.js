@@ -15,8 +15,15 @@ const setupTopMovies = (data) => {
             html += li
         });
         movieTopList.innerHTML = html;
+
+        document.getElementById("signOutButton").style.display = "block";
+        document.getElementById("signInButton").style.display = "none";
+        document.getElementById("signUpButton").style.display = "none";
     }else {
-        movieTopList.innerHTML = '<p>Login to view top movies chosen by users</p>'
+        movieTopList.innerHTML = '<p>Sign in to view top movies chosen by users</p>'
+        document.getElementById("signOutButton").style.display = "none";
+        document.getElementById("signInButton").style.display = "block";
+        document.getElementById("signUpButton").style.display = "block";
     }
 }
 

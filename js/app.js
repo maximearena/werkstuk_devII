@@ -59,37 +59,21 @@ class Movie {
         this.id = data.id;
         this.title = data.title;
         this.overview = data.overview;
-        this.genre = data.genre_ids;
-        // this.genreName = this.fetchMovieGenre(this.genre);
         this.language = data.original_language;
         this.date = data.release_date;
         this.poster = data.poster_path;
     }
-
-    // async fetchMovieGenre(genresId) {
-    //     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=3fab369827f78498557f8e469f9910fb&language=en-US`);
-    //     const json = await response.json();
-    //     for (const genreId of genresId) {
-    //         for (const genre of json.genres) {
-    //             if (genre.id == genreId){
-    //                 console.log(genre.name);
-    //                 return genre.name;
-    //             }
-    //         }
-    //     }
-    // }
 
     get htmlString() {
         return `<section>
                 <img src="https://image.tmdb.org/t/p/w200${this.poster}" alt="poster">
                 <h2>${this.title}</h2>
                 <p><span>Overview: </span>${this.overview}</p>
-                <p><span>Genre: </span>${this.genreName}</p>
                 <p><span>Language: </span>${this.language}</p>
                 <p><span>Release: </span>${this.date}</p>
-                <button id="showDetails" class="button-white">DETAILS</button></section>`
+                <!-- <button id="showDetails" class="button-white">DETAILS</button> -->
+                </section>`
     }
-    // console.log(this.fetchMovieGenre(28));
 }
 
 const movieList = new MovieList('movies');
